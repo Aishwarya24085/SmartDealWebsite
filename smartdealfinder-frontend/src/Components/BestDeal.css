@@ -1,0 +1,97 @@
+.bestDealSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    max-width: 800px;
+    margin: 32px auto;
+    padding: 32px;
+    gap: 32px;
+
+    background-color:#38A169;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); 
+    color:white;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.productdetails{
+    text-align: left;
+}
+
+.smartdeallabel {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: white;
+    color:#38A169;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.productTitle {
+    font-size: 20px;
+    line-height: 1.2;
+    margin: 0 0 4px 0;
+}
+
+.productPrice{
+    font-size:35px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.bestDealTag{
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent background */
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.productImageContainer {
+    flex-shrink: 0;
+}
+
+.productImageContainer .productImage {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: black;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .bestDealSection {
+        flex-direction: column-reverse; 
+        text-align: center;
+        padding: 24px;
+        gap: 20px;
+        max-width: 95%;
+    }
+    
+    .productDetails {
+        text-align: center;
+    }
+    
+    .productTitle {
+        font-size: 1.5rem;
+    }
+    .productPrice {
+        font-size: 2rem;
+    }
+    
+    .productImageContainer .productImage {
+        width: 120px;
+        height: 120px;
+    }
+}

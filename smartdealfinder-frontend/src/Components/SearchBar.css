@@ -1,0 +1,200 @@
+ .SearchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+
+.Input {
+    height: 48px; 
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    padding: 0 12px;
+    max-width: 600px;
+}
+
+.ImgContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row-reverse; 
+    margin-right: 8px;
+}
+.ImgContainer svg{
+    width: 24px;
+    height: 24px;
+    color: #9ca3af;
+    opacity: 1;
+    transition: color 0.2s;
+}
+
+.imglogo{
+    width: 24px;
+    height: 24px;
+    color: #9ca3af;
+    opacity: 0.15;
+    transition: color 0.2s;
+}
+
+.ImgContainer svg:hover {
+    color: #6b7280;
+}
+
+.imglogo:hover {
+    opacity: 0.25;
+}
+
+.InputText {
+    flex-grow: 1;
+    height: 100%;
+    padding: 0 8px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #374151;   
+}
+.InputText::placeholder {
+    color: #9ca3af;
+}
+
+
+.Submitbtn {
+    height: 48px;
+    width: 200px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #e06c10;
+    box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3);
+    transition: background-color 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+}
+.Submitbtn:hover {
+    box-shadow: 0 6px 8px rgba(249, 115, 22, 0.4);
+}
+
+
+.Clearbtn{
+  height: 48px;
+  width: 160px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #e06c10;
+  box-shadow: 0 4px 6px rgba(249, 115, 22, 0.3);
+  transition: background-color 0.2s, box-shadow 0.2s;
+  font-size: 1rem;
+}
+
+.Clearbtn:hover {
+  box-shadow: 0 6px 8px rgba(249, 115, 22, 0.4);
+}
+
+.SearchButtons {
+  display: flex;
+  gap: 12px;
+}
+.slogan {
+    text-align: center;
+    color: #374151;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+
+/* --- Image preview box --- */
+.PreviewContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.PreviewImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #d1d5db;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Edit and Remove buttons --- */
+.PreviewActions {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  display: flex;
+  gap: 3px;
+}
+
+.icon {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.edit {
+  color: #2563eb;
+}
+
+.remove {
+  color: #ef4444;
+}
+
+/* --- Platform checkboxes --- */
+.PlatformSelect {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.PlatformOption {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.PlatformOption:hover {
+  background-color: #f3f4f6;
+}
+
+.PlatformOption input[type="checkbox"] {
+  accent-color: #e06c10; 
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}

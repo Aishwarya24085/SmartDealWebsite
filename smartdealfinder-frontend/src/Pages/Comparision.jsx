@@ -1,0 +1,59 @@
+import Header from '../Components/Header.jsx';
+import SearchBar from '../Components/SearchBar.jsx';
+import Main from '../Components/Main.jsx';
+import { useState } from 'react';
+
+export default function Comparision() {
+  const [clicked, setClicked] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [comparisonData, setComparisonData] = useState(null);
+
+  async function HandleSubmit(selectedPlatforms, searchText) {
+  setClicked(true);
+  setLoading(true);
+  setComparisonData(null);
+
+  const payload = {
+    searchText,
+    platforms: selectedPlatforms
+  };
+
+  try {
+    const response = await fetch("http://localhost:5000/search", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+    setComparisonData(data);
+
+    } catch (error) {
+        console.error("Error sending data:", error);
+    } finally {
+        setLoading(false);
+    }
+ }
+
+
+  function clearResults() {
+    setComparisonData(null);
+  }
+
+  return (
+    <>
+      <Header />
+      <SearchBar HandleSubmit={HandleSubmit} clearResults={clearResults} />
+
+      {loading && <div style={{ textAlign: "center", marginTop: "20px" }}>
+        Loading best deals for you...
+      </div>}
+
+      {clicked && !loading && comparisonData && (
+        <Main data={comparisonData} />
+      )}
+    </>
+  );
+}

@@ -1,0 +1,50 @@
+.netPriceContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 8px;
+  border-top: 4px solid #2e7d32; /* green top border */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.netPriceContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.netPriceTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.netPriceSubtitle {
+  font-weight: 400;
+  color: #666;
+  margin-left: 4px;
+}
+
+.netPriceValue {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2e7d32; /* dark green */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

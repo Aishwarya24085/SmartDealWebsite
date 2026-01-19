@@ -1,0 +1,34 @@
+.footer {
+  background-color: #004d40;
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.socials {
+  margin-top: 10px;
+}
+
+.socials i {
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.footer p {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #cfd8dc;
+}
