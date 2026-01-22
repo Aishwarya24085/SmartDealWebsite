@@ -1,88 +1,115 @@
 .VendorSection {
-    background-color: white;
-    border: 1px solid #e5e7eb;;
-    border-radius: 12px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15); 
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    height: 200px; 
-    max-width: 170px;
-    max-height: 200px;
-    margin: 20px;
+  background-color: white;
+  border: 1px solid #f3f4f6;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Changed to left for a cleaner professional look */
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  width: 200px;
 }
 
-.VendorLogoSection {
-    margin-bottom: 10px;
-    height: 30px;
+.VendorSection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: #f97316;
 }
 
-.VendorLogo {
-    width: auto;
-    max-height: 30px;
+.VendorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.VendorDetails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 15px;
+.VendorTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.VendorPrice {
-    font-size: 1.55rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin: 0px;
-    margin-right: 80px;
-    padding: 0;
+.VendorBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #059669;
+  background-color: #ecfdf5;
+  padding: 4px 10px;
+  border-radius: 99px;
 }
 
-.VendorRating {
-    font-size: 0.95rem;
-    color: #6b7280;
-    margin-bottom: 15px;
+.PriceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.DiscountedPrice {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.OriginalPrice {
+  font-size: 1rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.RatingRow {
+  margin-bottom: 16px;
+}
+
+.RatingItem {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  background: #f9fafb;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.SellerInfoBox {
+  background-color: #f8fafc;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #f1f5f9;
+}
+
+.SellerName, .SellerRating {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.SellerRating span {
+  color: #f59e0b;
+  font-weight: 600;
 }
 
 .VendorButton {
-    background-color: #f97316;
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 5px;
-    transition: background-color 0.2s;
-    width: 80%;
-    max-width: 100px; 
-    box-shadow: 0 2px 4px rgba(249, 115, 22, 0.4);
-    margin:0px;
-    margin-left:80px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f97316;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
 }
 
 .VendorButton:hover {
-    background-color: #e06612; 
-}
-
-.VendorCouponSecton {
-    width: 100%;
-    border-top: 1px solid #e5e7eb; 
-}
-
-.CouponTitle {
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: #10b981;
-    margin: 0 0 4px 0;
-}
-
-.CouponDetails {
-    font-size: 0.85rem;
-    color: #6b7280;
-    margin: 0;
+  background-color: #ea580c;
+  box-shadow: 0 6px 15px rgba(249, 115, 22, 0.3);
 }

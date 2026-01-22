@@ -38,12 +38,13 @@ export default function SearchBar(props) {
   };
 
 
-  const handleSubmit = () => {
+  const  handleSubmit = () => {
     console.log("Searching for platforms:", selectedPlatforms);
     console.log("Product name/link:", searchText);
 
+
     // Call parent handler
-    props.HandleSubmit(selectedPlatforms, searchText, uploadedFile);
+    props.HandleSubmit(selectedPlatforms, searchText);
     
     // reset
     setSelectedPlatforms([]);

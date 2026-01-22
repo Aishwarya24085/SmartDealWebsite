@@ -8,7 +8,10 @@ const productSchema = new mongoose.Schema(
     rating: Number,
     discount: Number,
     seller: String,
-    sellerRating: Number
+    sellerRating: Number,
+    productUrl:String,
+    image:String,
+    noOfPeopleRated: Number
   },
   { timestamps: true }
 );

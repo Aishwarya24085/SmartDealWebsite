@@ -14,6 +14,9 @@ export default function DealList({ deals }) {
             vendorPrice={deal.price}
             vendorRating={deal.rating}
             discount={deal.discount}
+            productUrl={deal.productUrl}
+            seller={deal.seller}
+            sellerRating={deal.sellerRating}
           />
         ))}
       </div>

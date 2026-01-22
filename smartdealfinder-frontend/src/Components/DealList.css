@@ -1,13 +1,17 @@
 .DealListSection {
   max-width: 900px;
+  min-height: 280px;
   margin: 32px auto;
-  padding: 24px;
-  background-color: #F3F4F6;
-  border-radius: 8px;
+  padding: 32px;
+  background-color: #F9FAFB;
+  border-radius: 16px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .DealList {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* max 3 per row */
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: stretch;
 }

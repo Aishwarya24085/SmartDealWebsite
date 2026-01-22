@@ -14,6 +14,7 @@ export default function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // For demo purpose, you can add real auth later
+    
     login(formData.username);
   };
 

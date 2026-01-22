@@ -28,6 +28,7 @@ export default function Comparision() {
     });
 
     const data = await response.json();
+    console.log(data);
     setComparisonData(data);
 
     } catch (error) {
