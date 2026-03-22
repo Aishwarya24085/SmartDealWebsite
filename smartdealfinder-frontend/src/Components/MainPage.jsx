@@ -16,22 +16,30 @@ export default function MainSection() {
         <p className="tagline">Your Intelligent Shopping Companion</p>
 
         <p className="description">
-          SmartDealFinder helps you save time and money by comparing prices,
-          reviews, and coupons across multiple e-commerce platforms. Just enter
-          a <strong>product name, URL, or upload an image</strong> — and our AI
-          system finds the <strong>best deal</strong> for you!
+          SmartDealFinder helps users compare product prices and ratings across
+          multiple e-commerce platforms in a simple and efficient way. Instead of
+          manually checking different websites, users can view all available options
+          in one place and make better decisions.
         </p>
 
         <p className="description">
-          It fetches the prices and reviews from your selected platforms and
-          recommends the one with the lowest price and best rating — plus active
-          <strong> coupon offers</strong> to give you the best price possible.
+          The system uses a dataset of products collected from platforms like
+          Amazon, Flipkart, and Croma. It analyzes key factors such as{" "}
+          <strong>price, rating, seller reliability, discount, and user reviews</strong>{" "}
+          to recommend the most suitable product.
+        </p>
+
+        <p className="description">
+          Our project focuses on improving an existing research paper algorithm.
+          We enhanced the algorithm by introducing better normalization techniques
+          and dynamic weighting to provide more accurate and reliable results for
+          product comparison.
         </p>
 
         <p className="description tech">
           <strong>Built using:</strong> React.js (frontend), Node.js (backend),
-          MongoDB (database), and Google Gemini Pro API (for price comparison
-          and coupon generation).
+          MongoDB (database), and a research-based ranking algorithm for intelligent
+          decision making.
         </p>
 
         <p className="how-it-works">🔍 <span>How it works</span></p>
@@ -43,3 +51,4 @@ export default function MainSection() {
     </section>
   );
 }
+

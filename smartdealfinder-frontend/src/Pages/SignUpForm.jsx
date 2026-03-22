@@ -17,14 +17,39 @@ export default function SignupForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-    alert(`Account created for: ${formData.username}`);
-    navigate("/login")
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          email: formData.email,
+          password: formData.password
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Account created successfully!");
+        navigate("/login");
+      } else {
+        alert(data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
+    }
   };
 
   return (
@@ -76,7 +101,7 @@ export default function SignupForm() {
           required
         />
 
-        <button onClick={handleSubmit} type="submit">Sign Up</button>
+        <button type="submit">Sign Up</button>
 
         <p className="login-text">
           Already have an account? <Link to='/login'>Login</Link>

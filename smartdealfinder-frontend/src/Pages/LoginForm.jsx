@@ -11,11 +11,33 @@ export default function LoginForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // For demo purpose, you can add real auth later
-    
-    login(formData.username);
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          password: formData.password
+        })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("success");
+        login(data.username);
+      } else {
+        alert(data.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong");
+    }
   };
 
   return (

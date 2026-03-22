@@ -136,7 +136,7 @@ export default function SearchBar(props) {
           <input
             className="InputText"
             type="text"
-            placeholder="Enter product name or paste link..."
+            placeholder="Enter product name"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
@@ -150,6 +150,10 @@ export default function SearchBar(props) {
           <button onClick={handleClear} className="Clearbtn">
             Clear results
           </button>
+
+        {/* <button onClick={props.toggleHistory} className="history-trigger">
+          🕒 History
+        </button> */}
         </div>
 
       </div>

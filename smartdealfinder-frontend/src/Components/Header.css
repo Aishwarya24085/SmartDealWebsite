@@ -14,7 +14,16 @@
   font-size: 1.3rem;
   font-weight: bold;
 }
-
+.Home{
+  margin-right: 800px;
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.Home:hover{
+  text-decoration: underline;
+}
 .nav-links a {
   margin-left: 25px;
   color: white;
@@ -28,8 +37,8 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   padding: 15px 40px;
   background-color: #00796b;
   color: white;
@@ -63,4 +72,9 @@
 .welcome {
   margin-right: 20px;
   font-weight: 500;
+}
+
+.header {
+  position: relative;
+  z-index: 1100; /* higher than overlay */
 }
