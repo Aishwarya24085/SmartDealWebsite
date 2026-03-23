@@ -3,31 +3,28 @@ import HistorySidebar from "./HistorySidebar";
 import { Link } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
 import './Header.css';
+import './HistorySidebar.css';
 
-export default function Header() {
+export default function Header(props) {
   const { user, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
+    <div className="main-header">
       {/* Sidebar */}
-      {/* <HistorySidebar 
+      <HistorySidebar 
         isOpen={isOpen} 
         onClose={() => setIsOpen(false)} 
-      /> */}
+        historyTrigger={props.historyTrigger}
+        setIsOpen={setIsOpen}
+      />
 
       <header className="header">
-        {/* ☰ MENU BUTTON
-        <button 
-          className="menu-btn" 
-          onClick={() => setIsOpen(true)}
-        >
-          ☰
-        </button> */}
-
         <div className="logo">Smart Deal Finder</div>
 
         <Link className="Home" to="/">Home</Link>
+        <Link className="Compare" to="/comparision">Compare</Link>
 
         <nav className="nav">
           {user ? (
@@ -45,6 +42,7 @@ export default function Header() {
           )}
         </nav>
       </header>
+    </div>
     </>
   );
 }

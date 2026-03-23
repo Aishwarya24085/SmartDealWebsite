@@ -1,4 +1,9 @@
+.main-header{
+  display: flex;
+}
+
 .header {
+  margin-left: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,6 +11,7 @@
   color: white;
   padding: 15px 40px;
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 10;
 }
@@ -15,13 +21,23 @@
   font-weight: bold;
 }
 .Home{
-  margin-right: 800px;
+  margin-right: 30px;
   margin-left: 25px;
   color: white;
   text-decoration: none;
   font-weight: 500;
 }
 .Home:hover{
+  text-decoration: underline;
+}
+
+.Compare{
+  margin-right: 700px;
+   color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.Compare:hover{
   text-decoration: underline;
 }
 .nav-links a {

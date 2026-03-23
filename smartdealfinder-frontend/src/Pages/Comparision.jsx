@@ -8,6 +8,7 @@ export default function Comparision() {
   const [clicked, setClicked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [comparisonData, setComparisonData] = useState(null);
+  const [historyTrigger, setHistoryTrigger] = useState(0);
   const { user } = useAuth();
 
   async function HandleSubmit(selectedPlatforms, searchText) {
@@ -32,6 +33,7 @@ export default function Comparision() {
           searchText: searchText
         })
       });
+      setHistoryTrigger(prev => prev + 1);
     }
     const response = await fetch("http://localhost:5000/search", {
       method: "POST",
@@ -59,7 +61,7 @@ export default function Comparision() {
 
   return (
     <>
-      <Header />
+      <Header historyTrigger={historyTrigger} />
       <SearchBar HandleSubmit={HandleSubmit} clearResults={clearResults} />
 
       {loading && <div style={{ textAlign: "center", marginTop: "20px" }}>
