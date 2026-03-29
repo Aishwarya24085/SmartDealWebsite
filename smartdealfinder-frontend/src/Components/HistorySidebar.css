@@ -84,3 +84,26 @@
 .close-btn:hover img {
   transform: scale(1.2);
 }
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.history-text {
+  cursor: pointer;
+  flex: 1;
+}
+
+.delete-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: #ff4d4d;
+  font-size: 18px;
+}
+
+.delete-icon:hover {
+  color: red;
+}

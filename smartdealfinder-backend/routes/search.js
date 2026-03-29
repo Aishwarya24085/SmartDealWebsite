@@ -5,6 +5,11 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   const { searchText, platforms } = req.body;
+  const platformPriority = {
+    "Amazon": 3,
+    "Flipkart": 2,
+    "Croma": 1
+  };
 
   function escapeRegex(text) {
     return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
@@ -89,9 +94,20 @@ router.post("/", async (req, res) => {
   });
 
   // Best deal
-  const bestDeal = scored.reduce((best, curr) =>
-    curr.score > best.score ? curr : best
-  );
+  const bestDeal = scored.reduce((best, curr) => {
+    // Higher score wins
+    if (curr.score > best.score) return curr;
+
+    // Tie case
+    if (curr.score === best.score) {
+      const currPriority = platformPriority[curr.platformName] || 0;
+      const bestPriority = platformPriority[best.platformName] || 0;
+
+      return currPriority > bestPriority ? curr : best;
+    }
+
+    return best;
+  });
 
   // Response
   res.json({

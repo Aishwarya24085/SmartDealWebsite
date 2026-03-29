@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../Context/AuthContext";
 import closeIcon from "../assets/close-icon.svg";
+import deleteIcon from "../assets/deleteIcon.png"
 import './HistorySidebar.css';
 
 export default function HistorySidebar({ isOpen, onClose, onItemClick, historyTrigger, setIsOpen}) {
@@ -14,6 +15,24 @@ const [history, setHistory] = useState([]);
         .then(data => setHistory(data || []));
     }
   }, [user, historyTrigger, isOpen]);
+
+  async function handleDelete(id) {
+  const confirmDelete = window.confirm("Delete this search?");
+
+  if (!confirmDelete) return;
+
+  try {
+    await fetch(`http://localhost:5000/api/history/delete/${id}`, {
+      method: "DELETE"
+    });
+
+    // update UI instantly
+    setHistory(prev => prev.filter(item => item._id !== id));
+
+  } catch (error) {
+    console.error("Error deleting history:", error);
+  }
+}
 
   return (
     <>
@@ -41,16 +60,29 @@ const [history, setHistory] = useState([]);
                 <p className="empty-msg">No recent searches</p>
               ) : (
                 history.map((item, index) => (
-                  <div
-                    key={index}
-                    className="history-item"
-                    onClick={() => {
-                      // optional safety check
-                      if (typeof onClose === "function") onClose();
-                    }}
-                  >
-                    <span className="clock-icon"></span>
-                    {item.searchText}
+                  <div key={index} className="history-item">
+                    
+                    {/* TEXT */}
+                    <span
+                      className="history-text"
+                      onClick={() => {
+                        if (onItemClick) {
+                          onItemClick(item.searchText);
+                        }
+                        if (onClose) onClose();
+                      }}
+                    >
+                      {item.searchText}
+                    </span>
+
+                    {/* DELETE ICON */}
+                    <span
+                      className="delete-icon"
+                      onClick={() => handleDelete(item._id)}
+                    >
+                      <img src={deleteIcon} alt="delete" height={20} />
+                    </span>
+
                   </div>
                 ))
               )}

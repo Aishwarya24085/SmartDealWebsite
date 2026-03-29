@@ -5,7 +5,7 @@ import { useAuth } from "../Context/AuthContext";
 import './Header.css';
 import './HistorySidebar.css';
 
-export default function Header(props) {
+export default function Header({ historyTrigger, onHistoryClick }) {
   const { user, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,7 +16,8 @@ export default function Header(props) {
       <HistorySidebar 
         isOpen={isOpen} 
         onClose={() => setIsOpen(false)} 
-        historyTrigger={props.historyTrigger}
+        historyTrigger={historyTrigger}
+        onItemClick={onHistoryClick}
         setIsOpen={setIsOpen}
       />
 

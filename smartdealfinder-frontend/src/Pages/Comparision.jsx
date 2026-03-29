@@ -11,6 +11,11 @@ export default function Comparision() {
   const [historyTrigger, setHistoryTrigger] = useState(0);
   const { user } = useAuth();
 
+  function handleHistoryClick(text) {
+  // call your existing search function
+    HandleSubmit(["Flipkart", "Amazon", "Croma"], text);
+  }
+
   async function HandleSubmit(selectedPlatforms, searchText) {
   setClicked(true);
   setLoading(true);
@@ -61,7 +66,7 @@ export default function Comparision() {
 
   return (
     <>
-      <Header historyTrigger={historyTrigger} />
+      <Header historyTrigger={historyTrigger} onHistoryClick={handleHistoryClick}/>
       <SearchBar HandleSubmit={HandleSubmit} clearResults={clearResults} />
 
       {loading && <div style={{ textAlign: "center", marginTop: "20px" }}>

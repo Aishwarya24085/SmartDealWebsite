@@ -28,4 +28,16 @@ router.get("/:username", async (req, res) => {
   }
 });
 
+router.delete("/delete/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await History.findByIdAndDelete(id);
+
+    res.json({ message: "Deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Delete failed" });
+  }
+});
+
 module.exports = router;
